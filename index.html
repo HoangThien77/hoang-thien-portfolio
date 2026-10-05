@@ -963,11 +963,39 @@ body .deck>section.slide:not(.cover){display:block !important;min-height:0 !impo
 }
 </style>
 
+
+<style id="backpack-project-design">
+#project-backpack{background:#ece8e0 !important}
+.bag-heading{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:end;margin-bottom:42px}
+.bag-heading h2{font-size:clamp(48px,6.1vw,88px);line-height:1.03;letter-spacing:-.065em;margin:0}
+.bag-heading h2 em,.bag-story h3 em{font-family:Georgia,'Times New Roman',serif;font-weight:400}
+.bag-heading-copy{max-width:370px;justify-self:end}.bag-heading-copy p{font-size:16px;line-height:1.75;color:#5e594f;margin:14px 0 0}
+.bag-stage{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,100px);align-items:center}
+.bag-story h3{font-size:clamp(31px,3.5vw,48px);line-height:1.12;letter-spacing:-.045em;margin:13px 0 20px}.bag-story>p{font-size:16px;line-height:1.75;color:#5e594f;max-width:470px;margin:0 0 28px}
+.bag-reference{width:min(100%,360px);margin:0 auto 26px;perspective:1200px}
+.bag-reference img{width:100%;height:auto;border-radius:18px;border:1px solid #d8d2c7;box-shadow:0 25px 45px #231e1821;background:#fff;--depth-z:-3deg;--depth-y:-4deg}
+.bag-reference figcaption{font-family:ui-monospace,monospace;font-size:10px;line-height:1.7;letter-spacing:.05em;padding-top:16px;color:#6a6255}
+.bag-reference figcaption span{display:block;color:#393c34;margin-bottom:4px}
+.bag-watch{display:flex;align-items:center;justify-content:space-between;background:#202620;color:#f6f2e9;font-family:inherit;border:0;padding:18px 20px;font-size:14px;cursor:pointer;width:100%;max-width:360px;margin:0 auto}.bag-watch:hover{background:#384137}.bag-watch:focus-visible,.bag-shot:focus-visible{outline:2px solid #9d513b;outline-offset:5px}
+.bag-player-shell{padding:25px 30px;background:#1b201c;border-radius:6px;max-width:475px;width:100%;justify-self:center}
+.bag-player-shell .film-player{width:100%;margin:0}#backpack-final-cut{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:contain;background:#101510}
+.bag-facts{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:35px;margin-top:45px;padding-top:28px;border-top:1px solid #c8c0b2}
+.bag-facts dt{font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.12em;color:#6a6255;margin-bottom:11px}.bag-facts dd{font-size:15px;line-height:1.7;margin:0}
+.bag-scenes{margin-top:45px}.bag-scene-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:850px;margin:26px auto 0}
+.bag-scene-grid figure{min-width:0}.bag-shot{padding:0;border:0;background:transparent;cursor:pointer;display:block;width:100%}.bag-shot img{width:100%;aspect-ratio:9/16;object-fit:contain;border-radius:12px;box-shadow:0 20px 35px #231e181b;--depth-y:-2deg}.bag-scene-grid figure:nth-child(2) img{--depth-y:2deg;--depth-z:2deg}
+.bag-scene-grid figcaption{display:flex;flex-direction:column;gap:5px;margin-top:15px;font-size:14px;line-height:1.6}.bag-scene-grid figcaption span{font-family:ui-monospace,monospace;font-size:10px;color:#746c5e}
+.bag-depth{transform:perspective(1200px) translateY(var(--depth-lift,0px)) rotateZ(var(--depth-z,0deg)) rotateX(var(--pointer-x,0deg)) rotateY(calc(var(--depth-y,0deg) + var(--pointer-y,0deg)));transition:transform .35s ease,box-shadow .35s ease;backface-visibility:hidden}
+@media(hover:hover) and (pointer:fine){.bag-depth:hover{--depth-lift:-5px}}
+@media(max-width:900px){.bag-stage{gap:35px}.bag-player-shell{padding:20px}.bag-heading{gap:30px}.bag-heading-copy p{font-size:14px}.bag-story>p{font-size:14px}.bag-reference{width:min(90%,300px)}.bag-facts{gap:24px}.bag-facts dd{font-size:13px}}
+@media(max-width:640px){.bag-heading{grid-template-columns:1fr;gap:22px;margin-bottom:30px}.bag-heading h2{font-size:11vw}.bag-heading-copy{max-width:none;justify-self:start}.bag-stage{grid-template-columns:1fr;gap:32px}.bag-player-shell{grid-row:1;max-width:390px}.bag-reference{width:min(85%,300px)}.bag-story h3{font-size:34px}.bag-story>p{font-size:15px}.bag-facts{grid-template-columns:1fr;gap:24px;margin-top:32px}.bag-facts dd{font-size:15px}.bag-scenes{margin-top:34px}.bag-scene-grid{gap:14px;grid-template-columns:repeat(2,1fr)}.bag-scene-grid figure:last-child{grid-column:1/-1;width:calc(50% - 7px);justify-self:center}.bag-scene-grid figcaption{font-size:12px}.bag-scene-grid figcaption span{font-size:9px}.bag-depth{--depth-z:-1deg;--depth-y:-1deg}}
+@media(prefers-reduced-motion:reduce){.bag-depth{transition:none;--depth-lift:0px !important}}
+</style>
+
 </head>
 <body>
   <div class="cursor" aria-hidden="true"></div>
   <div class="progress" aria-hidden="true"><i></i></div>
-  <div class="slide-index" aria-hidden="true"><span id="current-slide">01</span><em>/</em><span>10</span></div>
+  <div class="slide-index" aria-hidden="true"><span id="current-slide">01</span><em>/</em><span>11</span></div>
   <div class="scroll-note" aria-hidden="true">SCROLL TO EXPLORE ↓</div>
 
   <main class="deck">
@@ -1091,16 +1119,30 @@ body .deck>section.slide:not(.cover){display:block !important;min-height:0 !impo
       </div>
       <div class="film-sequence reveal"><div class="film-subheading"><div><span class="film-small">01 / THE VISUAL STORY</span><h3>Every cut has <em>a reason.</em></h3></div><p>Five moments from the final film.<br>Select a frame to watch that moment. ↗</p></div><div class="film-strip"><figure class="film-shot"><button type="button" class="film-seek" data-film-time="2" aria-label="Play the hook at 2 seconds"><img src="assets/9a8630a7c13094c2.jpg" alt="Gymshark film still: silhouette & attitude" loading="lazy"><span class="shot-play" aria-hidden="true">↗</span><span class="shot-time">00:02</span></button><figcaption><span class="shot-number">01</span><div><strong>The hook</strong><span>Silhouette & attitude</span></div></figcaption></figure><figure class="film-shot"><button type="button" class="film-seek" data-film-time="6" aria-label="Play the texture at 6 seconds"><img src="assets/43b7d286f70255c8.jpg" alt="Gymshark film still: a closer look at the fabric" loading="lazy"><span class="shot-play" aria-hidden="true">↗</span><span class="shot-time">00:06</span></button><figcaption><span class="shot-number">02</span><div><strong>The texture</strong><span>A closer look at the fabric</span></div></figcaption></figure><figure class="film-shot"><button type="button" class="film-seek" data-film-time="10" aria-label="Play the stretch at 10 seconds"><img src="assets/c2a23696a1725562.jpg" alt="Gymshark film still: movement without limits" loading="lazy"><span class="shot-play" aria-hidden="true">↗</span><span class="shot-time">00:10</span></button><figcaption><span class="shot-number">03</span><div><strong>The stretch</strong><span>Movement without limits</span></div></figcaption></figure><figure class="film-shot"><button type="button" class="film-seek" data-film-time="18" aria-label="Play the fit at 18 seconds"><img src="assets/376347ba3207f4ff.jpg" alt="Gymshark film still: comfort in motion" loading="lazy"><span class="shot-play" aria-hidden="true">↗</span><span class="shot-time">00:18</span></button><figcaption><span class="shot-number">04</span><div><strong>The fit</strong><span>Comfort in motion</span></div></figcaption></figure><figure class="film-shot"><button type="button" class="film-seek" data-film-time="27" aria-label="Play the signature at 27 seconds"><img src="assets/aac4534d7bf1593d.jpg" alt="Gymshark film still: the final product moment" loading="lazy"><span class="shot-play" aria-hidden="true">↗</span><span class="shot-time">00:27</span></button><figcaption><span class="shot-number">05</span><div><strong>The signature</strong><span>The final product moment</span></div></figcaption></figure></div></div>
       <div class="film-making reveal"><div class="film-reference"><div class="film-subheading"><div><span class="film-small">02 / THE STARTING POINT</span><h3>Before the <em>motion.</em></h3></div></div><div class="film-reference-grid"><figure><img src="assets/b12087b175ab656e.webp" alt="Male character reference sheet with front, back and side views" loading="lazy"><figcaption><span>REF. A</span> MALE / CHARACTER CONSISTENCY</figcaption></figure><figure><img src="assets/a41748c4684b7a37.webp" alt="Female character reference sheet with front, back and side views" loading="lazy"><figcaption><span>REF. B</span> FEMALE / CHARACTER CONSISTENCY</figcaption></figure></div></div><div class="film-direction"><span class="film-small">03 / BEHIND THE EDIT</span><h3>From reference<br><em>to a visual story.</em></h3><p>The study connects character and garment references with an AI-generated sportswear film. Its visual sequence moves from the opening hook to fabric detail, stretch, fit and the closing brand frame.</p><ol class="film-method"><li><span>01</span><div><strong>Anchor the look</strong><p>Character and garment references establish the visual direction.</p></div></li><li><span>02</span><div><strong>Explore the visuals</strong><p>Explore how AI-generated imagery can present fabric, fit and movement in a sportswear concept.</p></div></li><li><span>03</span><div><strong>Find the rhythm</strong><p>Connect the opening, product details and closing frame through pacing and on-screen text.</p></div></li></ol><div class="film-tools"><span>MADE WITH</span><strong>Dreamina / CapCut</strong></div></div></div>
-      <footer class="film-case-footer reveal"><span>REFERENCE → GENERATE → CURATE → EDIT</span><span>THE SHIRT IS THE HERO. THE EDIT IS THE FEELING.</span><a href="#slide-06">NEXT PROJECT ↗</a></footer>
+      <footer class="film-case-footer reveal"><span>REFERENCE → GENERATE → CURATE → EDIT</span><span>THE SHIRT IS THE HERO. THE EDIT IS THE FEELING.</span><a href="#project-backpack">NEXT PROJECT ↗</a></footer>
           </div>
     </section>
 
-    <section class="slide macdoc-title light macdoc-theme" id="slide-06" data-slide="06">
+<section class="slide backpack-project light" id="project-backpack" data-slide="06" aria-labelledby="backpack-title">
+ <div class="section-inner">
+ <div class="slide-label reveal">05 — PROJECT / AI E-COMMERCE PRODUCT AD</div>
+ <header class="bag-heading reveal"><h2 id="backpack-title">Everyday carry.<br><em>In motion.</em></h2><div class="bag-heading-copy"><span class="film-small">PROJECT 02 / BLACK LEATHER BACKPACK</span><p>An AI product commercial built from a backpack reference image, moving from a studio-style reveal to everyday use. Edited with Vietnamese on-screen text.</p></div></header>
+ <div class="bag-stage reveal">
+  <div class="bag-story"><span class="film-small">THE STARTING IMAGE</span><h3>One product.<br><em>A new setting.</em></h3><p>The original product image is the starting reference for AI generation. The final video presents the black backpack through product details and lifestyle scenes.</p><figure class="bag-reference"><img class="bag-depth" src="assets/e4d2f9959d5ac147.png" alt="Original black leather backpack image supplied as the starting reference for AI video generation" loading="lazy"><figcaption><span>INPUT / PRODUCT REFERENCE</span>The image used to start AI video generation.</figcaption></figure><button class="bag-watch" type="button" data-backpack-time="0">▶ &nbsp; Watch with sound <span>↗</span></button></div>
+  <div class="bag-player-shell"><figure class="film-player"><div class="film-player-label"><span>FINAL FILM</span><span>29.5 SEC / 9:16</span></div><video id="backpack-final-cut" src="assets/ae301e7f273f5ae4.mp4" poster="assets/4df770d1ed3acf38.jpg" autoplay muted loop controls playsinline preload="metadata" aria-label="Black leather backpack AI e-commerce product commercial, 29.5 seconds"></video><figcaption><span>BLACK LEATHER BACKPACK</span><span>TURN SOUND ON ↗</span></figcaption></figure></div>
+ </div>
+ <dl class="bag-facts reveal"><div><dt>TOOLS</dt><dd>Google Flow · Veo 3.1 Fast · CapCut</dd></div><div><dt>FORMAT</dt><dd>Vertical 9:16 · E-commerce Product Ad</dd></div><div><dt>PROJECT TYPE</dt><dd>AI Video · Product Commercial · E-commerce</dd></div></dl>
+ <div class="bag-scenes reveal"><div class="film-subheading"><div><span class="film-small">FROM THE FINAL FILM</span><h3>A product, <em>in context.</em></h3></div><p>Three moments from the finished video.<br>Select a frame to watch that scene. ↗</p></div><div class="bag-scene-grid"><figure><button class="bag-shot" type="button" data-backpack-time="3" aria-label="Watch the product reveal at 3 seconds"><img class="bag-depth" src="assets/4df770d1ed3acf38.jpg" alt="Black backpack film still: the product reveal" loading="lazy"></button><figcaption><span>00:03 / SELECT TO WATCH ↗</span><strong>The product reveal</strong></figcaption></figure><figure><button class="bag-shot" type="button" data-backpack-time="12" aria-label="Watch everyday details at 12 seconds"><img class="bag-depth" src="assets/71f6e8e027c3dd9a.jpg" alt="Black backpack film still: everyday details" loading="lazy"></button><figcaption><span>00:12 / SELECT TO WATCH ↗</span><strong>Everyday details</strong></figcaption></figure><figure><button class="bag-shot" type="button" data-backpack-time="24" aria-label="Watch on the move at 24 seconds"><img class="bag-depth" src="assets/6aa43e612bc5a5d7.jpg" alt="Black backpack film still: on the move" loading="lazy"></button><figcaption><span>00:24 / SELECT TO WATCH ↗</span><strong>On the move</strong></figcaption></figure></div></div>
+ <div class="chapter-link reveal"><span>CHAPTER 02</span><i></i><p>PRODUCT STORY / BLACK LEATHER BACKPACK</p><b>02</b></div>
+ </div>
+ </section>
+
+    <section class="slide macdoc-title light macdoc-theme" id="slide-06" data-slide="07">
       <div class="section-inner">
-      <div class="slide-label reveal">05 — PROJECT / PRODUCT & BRAND STORY</div>
+      <div class="slide-label reveal">06 — PROJECT / PRODUCT & BRAND STORY</div>
       <div class="macdoc-logo-stage reveal"><img src="assets/c971e98259637ab0.webp" alt="Mặc Đọc brand logo"></div>
       <div class="macdoc-heading reveal">
-        <span>PROJECT 02</span>
+        <span>PROJECT 03</span>
         <h2>MẶC ĐỌC.</h2>
         <p>A Chinese-learning web app with video-based listening, transcript reading and vocabulary review. This showcase presents its interface and a short product motion study.</p>
       </div>
@@ -1111,13 +1153,13 @@ body .deck>section.slide:not(.cover){display:block !important;min-height:0 !impo
         <div class="macdoc-right-stack"><img class="md-shot s2" src="assets/a046cd3f4bbf36ef.webp" alt="Mặc Đọc vocabulary detail page">
 <img class="md-shot s4" src="assets/170464ec216130e5.webp" alt="Mặc Đọc achievement page"></div>
       </div>
-      <div class="chapter-link reveal"><span>CHAPTER 02</span><i></i><p>PRODUCT EXPERIENCE / MẶC ĐỌC</p><b>02</b></div>
+      <div class="chapter-link reveal"><span>CHAPTER 03</span><i></i><p>PRODUCT EXPERIENCE / MẶC ĐỌC</p><b>03</b></div>
           </div>
     </section>
 
-    <section class="slide macdoc-motion macdoc-theme" id="slide-07" data-slide="07">
+    <section class="slide macdoc-motion macdoc-theme" id="slide-07" data-slide="08">
       <div class="section-inner">
-<div class="slide-label reveal">06 — MOTION STUDY / PRODUCT EXPERIENCE IN MOTION</div>
+<div class="slide-label reveal">07 — MOTION STUDY / PRODUCT EXPERIENCE IN MOTION</div>
       <div class="motion-stage reveal">
         <div class="motion-copy">
           <p class="eyebrow">MOTION AS EXPLANATION</p>
@@ -1133,9 +1175,9 @@ body .deck>section.slide:not(.cover){display:block !important;min-height:0 !impo
           </div>
     </section>
 
-    <section class="slide engineering light" id="slide-08" data-slide="08">
+    <section class="slide engineering light" id="slide-08" data-slide="09">
       <div class="section-inner">
-      <div class="slide-label reveal">07 — SOFTWARE ENGINEERING / THE SYSTEMS MINDSET</div>
+      <div class="slide-label reveal">08 — SOFTWARE ENGINEERING / THE SYSTEMS MINDSET</div>
       <div class="engineering-head reveal">
         <h2>CREATIVE<br>ON THE SURFACE.<br><span>ENGINEERED<br>UNDERNEATH.</span></h2>
         <p>My software experience includes ERP and biometric access-control systems. The examples below come from work on face synchronization, automated testing and real-time check-in workflows.</p>
@@ -1154,9 +1196,9 @@ body .deck>section.slide:not(.cover){display:block !important;min-height:0 !impo
           </div>
     </section>
 
-    <section class="slide process-slide" id="slide-09" data-slide="09">
+    <section class="slide process-slide" id="slide-09" data-slide="10">
       <div class="section-inner">
-      <div class="slide-label reveal">08 — PROCESS / A SYSTEM FOR CREATIVE ITERATION</div>
+      <div class="slide-label reveal">09 — PROCESS / A SYSTEM FOR CREATIVE ITERATION</div>
       <div class="process-title reveal"><h2>NOT ONE<br>MAGIC PROMPT.</h2><p>A framework for planning and refining AI-assisted video projects.</p></div>
       <div class="process-grid reveal">
         <article><span>01</span><h3>FRAME</h3><p>Define the audience, objective, mood and the one thing the viewer should remember.</p></article>
@@ -1169,9 +1211,9 @@ body .deck>section.slide:not(.cover){display:block !important;min-height:0 !impo
           </div>
     </section>
 
-    <section class="slide final-slide light" id="slide-10" data-slide="10">
+    <section class="slide final-slide light" id="slide-10" data-slide="11">
       <div class="section-inner">
-      <div class="slide-label reveal">09 — CONTACT / NEXT CHAPTER</div>
+      <div class="slide-label reveal">10 — CONTACT / NEXT CHAPTER</div>
       <div class="final-grid">
         <div class="final-copy reveal">
           <p class="eyebrow">AVAILABLE FOR CREATIVE + TECHNICAL OPPORTUNITIES</p>
@@ -1210,7 +1252,7 @@ window.addEventListener('DOMContentLoaded', () => {
 <script>
 window.addEventListener('DOMContentLoaded', () => {
   const pointerMotion = matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
-  const items = document.querySelectorAll('.product-3d img,.md-shot,.motion-screen,.float-ui,.metric-card,.process-grid article,.code-plane');
+  const items = document.querySelectorAll('.product-3d img,.md-shot,.motion-screen,.float-ui,.metric-card,.process-grid article,.code-plane,.bag-depth');
   items.forEach(item => {
     let frame = 0;
     item.addEventListener('pointermove', event => {
@@ -1230,6 +1272,18 @@ window.addEventListener('DOMContentLoaded', () => {
       item.style.removeProperty('--pointer-y');
     });
   });
+});
+</script>
+
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+ const video=document.getElementById('backpack-final-cut');
+ document.querySelectorAll('[data-backpack-time]').forEach(button=>button.addEventListener('click',async()=>{
+  video.currentTime=Number(button.dataset.backpackTime);video.muted=false;video.dataset.requestedPlayback='true';
+  video.scrollIntoView({block:'center',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  try{await video.play()}catch(_){video.focus()}
+ }));
 });
 </script>
 
